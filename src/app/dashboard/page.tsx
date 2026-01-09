@@ -48,15 +48,17 @@ export default function StudentDashboardPage() {
 
       {courses.length === 0 && <p>No enrollments.</p>}
 
-      <ul>
-        {courses.map((e) => (
-          <li key={e.courses.id}>
-            <Link href={`/dashboard/courses/${e.courses.id}`}>
-              {e.courses.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+     <ul>
+  {courses.map((e) =>
+    e.courses.map((c) => (
+      <li key={c.id}>
+        <Link href={`/dashboard/courses/${c.id}`}>
+          {c.title}
+        </Link>
+      </li>
+    ))
+  )}
+</ul>
     </div>
   );
 }
