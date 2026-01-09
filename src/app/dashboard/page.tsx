@@ -8,8 +8,9 @@ type Enrollment = {
   courses: {
     id: string;
     title: string;
-  };
+  }[];
 };
+
 
 export default function StudentDashboardPage() {
   const supabase = createClient();
